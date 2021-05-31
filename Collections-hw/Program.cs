@@ -6,9 +6,45 @@ namespace Collections_hw
 {
     abstract class Person
     {
-        public string Surname { get; set; }
-        public int Course { get; set; }
-        public int GradeBook { get; set; }
+        private string surname;
+        private int course;
+        private int gradeBook;
+
+        public string Surname
+        {
+            get
+            {
+                return surname;
+            }
+            set
+            {
+                surname = value;
+            }
+        }
+
+        public int Course
+        {
+            get
+            {
+                return course;
+            }
+            set
+            {
+                course = value;
+            }
+        }
+
+        public int GradeBook
+        {
+            get
+            {
+                return gradeBook;
+            }
+            set
+            {
+                gradeBook = value;
+            }
+        }
 
         public Person(string surname, int course, int gradeBook)
         {
@@ -35,17 +71,30 @@ namespace Collections_hw
 
     class Aspirant : Person
     {
-        public string SlideShow { get; set; }
+        private string slideShow;
+
+        public string SlideShow
+        {
+            get
+            {
+                return slideShow;
+            }
+            set
+            {
+                slideShow = value;
+            }
+        }
+
         public Aspirant(string slideShow, string surname, int course, int gradeBook)
             : base(surname, course, gradeBook)
         {
             SlideShow = slideShow;
         }
 
-        public Aspirant(string surname, int course, int gradeBook, string slideShow) : base(surname, course, gradeBook)
-        {
+        //public Aspirant(string surname, int course, int gradeBook, string slideShow) : base(surname, course, gradeBook)
+        //{
 
-        }
+        //}
 
         public override void Print()
         {
@@ -63,7 +112,9 @@ namespace Collections_hw
             LinkedList<Student> linkedListStudent = new LinkedList<Student>();
             LinkedList<Aspirant> linkedListAspirant = new LinkedList<Aspirant>();
 
-            for (; ; )
+            bool result = true;
+
+            do
             {
                 Menu();
                 Console.WriteLine("\nChoose the number");
@@ -81,7 +132,7 @@ namespace Collections_hw
 
                             listStudent.Add(new Student(surname, course, gradeBook));
                             linkedListStudent.AddLast(new Student(surname, course, gradeBook));
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 2:
@@ -97,19 +148,19 @@ namespace Collections_hw
 
                             listAspirant.Add(new Aspirant(slideShow, surname, course, gradeBook));
                             linkedListAspirant.AddLast(new Aspirant(slideShow, surname, course, gradeBook));
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 3:
                         {
                             Console.WriteLine($"\nYou have added {listStudent.Count} students");
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 4:
                         {
                             Console.WriteLine($"\nYou have added {listAspirant.Count} aspirants");
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 5:
@@ -128,28 +179,21 @@ namespace Collections_hw
                                     Console.ResetColor();
                                 }
                             }
-                            if (linkedListStudent.Count == 0)
+                            foreach (Student item3 in linkedListStudent)
                             {
-                                Console.WriteLine("There aren't any students");
+                                item3.Print();
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine(", Belongs to LinkedList");
+                                Console.ResetColor();
                             }
-                            else
-                            {
-                                foreach (Student item3 in linkedListStudent)
-                                {
-                                    item3.Print();
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine(", Belongs to LinkedList");
-                                    Console.ResetColor();
-                                }
-                            }
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 6:
                         {
                             if (listAspirant.Count == 0)
                             {
-                                Console.WriteLine("There aren't any students");
+                                Console.WriteLine("There aren't any aspirants");
                             }
                             else
                             {
@@ -161,22 +205,15 @@ namespace Collections_hw
                                     Console.ResetColor();
                                 }
                             }
-                            if (linkedListAspirant.Count == 0)
+                            foreach (Aspirant item4 in linkedListAspirant)
                             {
-                                Console.WriteLine("There aren't any students");
-                            }
-                            else
-                            {
-                                foreach (Aspirant item4 in linkedListAspirant)
-                                {
-                                    item4.Print();
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine(", Belongs to LinkedList");
-                                    Console.ResetColor();
-                                }
+                                item4.Print();
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine(", Belongs to LinkedList");
+                                Console.ResetColor();
                             }
 
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 7:
@@ -199,7 +236,7 @@ namespace Collections_hw
                                     Console.WriteLine($"Student's surname - {human1.Surname}, Course - {human1.Course}, Grade book number - {human1.GradeBook}");
                                 }
                             }
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 8:
@@ -222,7 +259,7 @@ namespace Collections_hw
                                     Console.WriteLine($"Aspirant's surname - {human2.Surname}, Course - {human2.Course}, Grade book number - {human2.GradeBook}, Presentation - {human2.SlideShow} ");
                                 }
                             }
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 9:
@@ -246,7 +283,7 @@ namespace Collections_hw
                                     listStudent.RemoveAt(deletteStudent);
                                 }
                             }
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 10:
@@ -270,27 +307,38 @@ namespace Collections_hw
                                     listAspirant.RemoveAt(deletteAspirant);
                                 }
                             }
-                            Console.WriteLine("\nType any keyboard...\n");
+                            Type();
                             break;
                         }
                     case 11:
                         {
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("See yaa");
+                            Console.ResetColor();
+                            result = false;
                             break;
                         }
                     default:
                         {
                             Console.Write("You have only 11 choices, pls try again: ");
+                            Type();
                             break;
                         }
                 }
                 Console.ReadKey();
             }
+            while (result == true);
 
+        }
+
+        public static void Type()
+        {
+            Console.WriteLine("\nType any keyboard...\n");
         }
 
         public static void Menu()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("1)Add Student");
             Console.WriteLine("2)Add Aspirant");
             Console.WriteLine("3)Number of students");
@@ -302,6 +350,7 @@ namespace Collections_hw
             Console.WriteLine("9)Delette student by index number");
             Console.WriteLine("10)Delette aspirant by index number");
             Console.WriteLine("11)Exit");
+            Console.ResetColor();
         }
 
         public static bool surnameCompare = true;
