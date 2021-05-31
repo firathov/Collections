@@ -390,11 +390,10 @@ namespace Collections_hw
 
         static int ForGradeBookCheck()
         {
-            int number;
             for (; ; )
             {
                 string checkingNumber = Console.ReadLine();
-                Int32.TryParse(checkingNumber, out number);
+                Int32.TryParse(checkingNumber, out int number);
 
                 if (number > 0 && number < 10000)
                 {
@@ -429,12 +428,11 @@ namespace Collections_hw
 
         static int ForNumberCheck()
         {
-            int number;
 
             for (; ; )
             {
                 string checkingNumber = Console.ReadLine();
-                if (Int32.TryParse(checkingNumber, out number) && number > 0)
+                if (Int32.TryParse(checkingNumber, out int number) && number > 0)
                 {
                     return number;
                 }
@@ -446,4 +444,3 @@ namespace Collections_hw
         }
     }
 }
-
