@@ -91,11 +91,6 @@ namespace Collections_hw
             SlideShow = slideShow;
         }
 
-        //public Aspirant(string surname, int course, int gradeBook, string slideShow) : base(surname, course, gradeBook)
-        //{
-
-        //}
-
         public override void Print()
         {
             Console.Write($"Aspirant's surname - { Surname }, Course - { Course }, Grade Book { GradeBook }, Slide show - { SlideShow } ");
