@@ -1,0 +1,12 @@
+/Users/firat/Documents/Collections-hw/Collections-hw/obj/Debug/netcoreapp3.1/Collections-hw.csprojAssemblyReference.cache
+/Users/firat/Documents/Collections-hw/Collections-hw/obj/Debug/netcoreapp3.1/Collections-hw.AssemblyInfoInputs.cache
+/Users/firat/Documents/Collections-hw/Collections-hw/obj/Debug/netcoreapp3.1/Collections-hw.AssemblyInfo.cs
+/Users/firat/Documents/Collections-hw/Collections-hw/obj/Debug/netcoreapp3.1/Collections-hw.csproj.CoreCompileInputs.cache
+/Users/firat/Documents/Collections-hw/Collections-hw/bin/Debug/netcoreapp3.1/Collections-hw.deps.json
+/Users/firat/Documents/Collections-hw/Collections-hw/bin/Debug/netcoreapp3.1/Collections-hw.runtimeconfig.json
+/Users/firat/Documents/Collections-hw/Collections-hw/bin/Debug/netcoreapp3.1/Collections-hw.runtimeconfig.dev.json
+/Users/firat/Documents/Collections-hw/Collections-hw/bin/Debug/netcoreapp3.1/Collections-hw.dll
+/Users/firat/Documents/Collections-hw/Collections-hw/bin/Debug/netcoreapp3.1/Collections-hw.pdb
+/Users/firat/Documents/Collections-hw/Collections-hw/obj/Debug/netcoreapp3.1/Collections-hw.dll
+/Users/firat/Documents/Collections-hw/Collections-hw/obj/Debug/netcoreapp3.1/Collections-hw.pdb
+/Users/firat/Documents/Collections-hw/Collections-hw/obj/Debug/netcoreapp3.1/Collections-hw.genruntimeconfig.cache
